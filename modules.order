@@ -1,0 +1,5 @@
+kernel//home/libing/source/ubuntu-trusty/drivers/net/wireless/ath/ath9k/ar9003_csi.ko
+kernel//home/libing/source/ubuntu-trusty/drivers/net/wireless/ath/ath9k/ath9k.ko
+kernel//home/libing/source/ubuntu-trusty/drivers/net/wireless/ath/ath9k/ath9k_hw.ko
+kernel//home/libing/source/ubuntu-trusty/drivers/net/wireless/ath/ath9k/ath9k_common.ko
+kernel//home/libing/source/ubuntu-trusty/drivers/net/wireless/ath/ath9k/ath9k_htc.ko

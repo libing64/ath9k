@@ -1,0 +1,1 @@
+cmd_/home/libing/source/ubuntu-trusty/drivers/net/wireless/ath/ath9k/built-in.o :=  rm -f /home/libing/source/ubuntu-trusty/drivers/net/wireless/ath/ath9k/built-in.o; ar rcsD /home/libing/source/ubuntu-trusty/drivers/net/wireless/ath/ath9k/built-in.o
