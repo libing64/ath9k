@@ -1,0 +1,29 @@
+#collect csi data with atheros 9300 card
+
+Tip: You can then merge these driver modifications into the Linux source tree for your distribution-provided kernel version, in order to improve compatibility. On Ubuntu, run:
+
+UBUNTU_KERNEL_TAG=Ubuntu-3.13.0-32.57
+# Modify the line above with your Ubuntu kernel tag. First, determine your full kernel
+# version by reading /proc/version_signature; then, look up the Ubuntu kernel tag at:
+# http://people.canonical.com/~kernel/info/kernel-version-map.html
+
+. /etc/lsb-release
+git clone git://kernel.ubuntu.com/ubuntu/ubuntu-${DISTRIB_CODENAME}.git
+git checkout ${UBUNTU_KERNEL_TAG}
+
+#compile
+make -C /lib/modules/$(uname -r)/build M=$(pwd)/drivers/net/wireless/ath/ath9k modules
+
+#install module
+#sudo make 
+cd /lib/modules/3.13.0-32-generic/kernel/drivers/net/wireless/ath/ath9k
+for file in ./*.ko; do sudo mv $file $file.orig; done
+cp xx/drivers/net/wireless/ath/ath9k/*.ko .
+sudo modprobe *.ko
+sudo depmod update
+sudo reboot
+
+#check the module infomation
+modinfo ath9k_hw
+
+
