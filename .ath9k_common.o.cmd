@@ -1,1 +1,0 @@
-cmd_/home/libing/source/ubuntu-trusty/drivers/net/wireless/ath/ath9k/ath9k_common.o := ld -m elf_x86_64   -r -o /home/libing/source/ubuntu-trusty/drivers/net/wireless/ath/ath9k/ath9k_common.o /home/libing/source/ubuntu-trusty/drivers/net/wireless/ath/ath9k/common.o 
