@@ -11,16 +11,19 @@ UBUNTU_KERNEL_TAG=Ubuntu-3.13.0-32.57
 git clone git://kernel.ubuntu.com/ubuntu/ubuntu-${DISTRIB_CODENAME}.git
 git checkout ${UBUNTU_KERNEL_TAG}
 
+#use the repo replace the ath9k dir(ubuntu-trusty/drivers/net/wireless/ath/ath9k)
+
+cd ubuntu-trusty
+
 #compile
 make -C /lib/modules/$(uname -r)/build M=$(pwd)/drivers/net/wireless/ath/ath9k modules
 
 #install module
-#sudo make 
 cd /lib/modules/3.13.0-32-generic/kernel/drivers/net/wireless/ath/ath9k
 for file in ./*.ko; do sudo mv $file $file.orig; done
-cp xx/drivers/net/wireless/ath/ath9k/*.ko .
+cp ubuntu-trusty/drivers/net/wireless/ath/ath9k/*.ko .
 sudo modprobe *.ko
-sudo depmod update
+sudo depmod
 sudo reboot
 
 #check the module infomation
